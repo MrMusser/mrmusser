@@ -1,0 +1,172 @@
+html {
+  font-size: 16px;
+  font-family: 'Montserrat', serif;
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: 'Croissant One', serif;
+  color: rgb(51, 81, 181);
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Banner Section */
+
+#banner {
+  background-image: url('banner.jpg');
+  background-size: cover;
+  height: 500px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+#banner:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  background-color: rgba(51, 81, 181, 0.5);
+}
+
+#banner * {
+  position: relative;
+}
+
+#banner h1 {
+  padding-top: 7rem;
+  text-shadow: 0 0 25px black;
+  color: white;
+  text-align: center;
+}
+
+#banner h2 {
+  padding-top: 1.5rem;
+  text-shadow: 0 0 15px black;
+  text-align: center;
+  color: white;
+}
+
+/* End Banner Section. Begin navigation bar section. */
+
+nav {
+  height: 3rem;
+  background-color: rgb(51, 81, 181);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 500px;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 15px black;
+  z-index: 1;
+}
+
+nav li {
+  display: inline;
+  color: white;
+  font-size: 1rem;
+  padding-right: 4rem;
+  text-shadow: 0 0 5px black;
+}
+
+/* Finalize navigation bar. Begin main */
+
+.main {
+  position: absolute;
+  top: 548px;
+  left: 0;
+  right: 0;
+  background-color: rgb(200, 200, 200);
+  z-index: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+/* Main initialized. Begin "About Me" section */
+
+.about-me {
+  grid-area: 1 / 1 / span 1 / span 1;
+  background-color: rgb(235,235,235);
+  display: grid;
+  grid-template-columns: 10% 30% 50% 10%;
+}
+
+.about-me-left {
+  grid-area: 1 / 2 / span 1 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#headshot {
+  width: 75%;
+  height: auto;
+  padding-top: 5rem;
+}
+
+.text {
+  width: 100%;
+  margin-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+.about-me-left h3 {
+  font-size: 2rem;
+  margin-top: -2.5%;
+  text-align: center;
+}
+
+.about-me-left h4 {
+  color: rgb(100,100,100);
+  margin-top: -5%;
+  text-align: center;
+}
+
+.about-me-left ul {
+  justify-content: space-around;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.about-me-left li {
+  display: inline;
+}
+
+.fa, .ai {
+  color: rgb(51, 81, 181);
+}
+
+.fa:hover, .ai:hover {
+  transform: scale(1.5,1.5);
+}
+
+.about-me-right {
+  grid-area: 1 / 3 / span 1 / span 1;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 5%;
+}
