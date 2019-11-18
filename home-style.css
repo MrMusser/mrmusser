@@ -1,6 +1,7 @@
 html {
   font-size: 16px;
   font-family: 'Montserrat', serif;
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -12,6 +13,8 @@ h2 {
   font-size: 2rem;
   font-family: 'Croissant One', serif;
   color: rgb(51, 81, 181);
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 p {
@@ -26,7 +29,7 @@ a {
 /* Banner Section */
 
 #banner {
-  background-image: url('banner.jpg');
+  background-image: url('Pictures/banner.jpg');
   background-size: cover;
   height: 500px;
   position: fixed;
@@ -85,7 +88,15 @@ nav li {
   color: white;
   font-size: 1rem;
   padding-right: 4rem;
-  text-shadow: 0 0 5px black;
+}
+
+nav a {
+  color: white;
+  transition: color 0.3s ease-in;
+}
+
+nav a:hover {
+  color: rgb(153,168,218);
 }
 
 /* Finalize navigation bar. Begin main */
@@ -98,14 +109,14 @@ nav li {
   background-color: rgb(200, 200, 200);
   z-index: 0;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: max-content;
 }
 
 /* Main initialized. Begin "About Me" section */
 
 .about-me {
   grid-area: 1 / 1 / span 1 / span 1;
-  background-color: rgb(235,235,235);
+  background-color: rgb(240,240,240);
   display: grid;
   grid-template-columns: 10% 30% 50% 10%;
 }
@@ -169,4 +180,437 @@ nav li {
   align-items: flex-start;
   flex-wrap: wrap;
   margin: 5%;
+}
+
+.about-me-right h2 {
+  padding-left: 0;
+}
+
+/* About Me section done. Begin Policy Writing section */
+
+.policy {
+  grid-area: 2 / 1 / span 1 / span 1;
+  background-color: rgb(230,230,230);
+  display: grid;
+  grid-template-columns: 5% 30% 55% 10%;
+}
+
+.policy-left {
+  grid-area: 1 / 2 / span 1 / span 1;
+}
+
+.desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.policy-left h2 {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.policy-left h4 {
+  color: rgb(100, 100, 100);
+  text-align: center;
+  margin-top: 15%;
+}
+
+.logo {
+  justify-content: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+#cspc {
+  max-width: 50%;
+  display: block;
+}
+
+#berkley {
+  max-width: 35%;
+  display: block;
+}
+
+.policy-right {
+  grid-area: 1 / 3 / span 1 / span 1;
+}
+
+.policy-right h3 {
+  margin-top: 10%;
+}
+
+.policy-right p {
+  padding-left: 5%;
+}
+
+.policy-right h4 {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+/* Policy Writing section finished. Begin Data Visualization section */
+
+.data-viz {
+  grid-area: 3 / 1 / span 1 / span 1;
+  background-color: rgb(240,240,240);
+  display: grid;
+  height: 45rem;
+  grid-template-columns: 5% 30% 55% 10%;
+}
+
+.detail {
+  grid-area: 1 / 1 / span 1 / span 1;
+  display: flex;
+  align-items: center;
+}
+
+.data-left {
+  grid-area: 1 / 2 / span 1 / span 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.data-left h2 {
+  text-align: center;
+  margin-top: 15%;
+}
+
+#mobile {
+  display: none;
+}
+
+.data-right {
+  grid-area: 1 / 3 / span 1 / span 1;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.graph {
+  width: 90%;
+  max-height: 100%;
+  margin: 1rem;
+  border: 2px solid #aaa;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  margin-top: 15%;
+}
+
+.detail-container {
+  position: fixed;
+  z-index: 10;
+  left: -100%;
+  box-sizing: border-box;
+  top: 0;
+  height: 100%;
+  width: 35%;
+  border: 4px solid #aaa;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  opacity: 1;
+  transition: all 0.75s ease-in-out;
+}
+
+.detail-container p, .detail-container h4 {
+  padding: 2%;
+}
+
+#china {
+  grid-area: 1 / 1 / span 1 / span 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#china:hover .graph {
+  transform: scale(2,2) translate(25%,25%);
+}
+
+#china:hover .detail-container {
+  opacity: 1;
+  left: 0;
+}
+
+#dc-race {
+  grid-area: 1 / 2 / span 1 / span 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#dc-race:hover .graph {
+  transform: scale(2,2) translate(-25%,25%);
+}
+
+#dc-race:hover .detail-container {
+  opacity: 1;
+  left: 0;
+}
+
+#tenure {
+  grid-area: 2 / 1 / span 1 / span 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#tenure:hover .graph {
+  transform: scale(2,2) translate(25%,-25%);
+}
+
+#tenure:hover .detail-container {
+  opacity: 1;
+  left: 0;
+}
+
+#offices {
+  grid-area: 2 / 2 / span 1 / span 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#offices:hover .graph {
+  transform: scale(2,2) translate(-25%,-25%);
+}
+
+#offices:hover .detail-container {
+  opacity: 1;
+  left: 0;
+}
+
+/* Finished Data Visualization section. Begin Fiction and Narrative section. */
+
+.fiction-narrative {
+  grid-area: 4 / 1 / span 1 / span 1;
+  background-color: rgb(230,230,230);
+  display: grid;
+  height: auto;
+  grid-template-columns: 5% 30% 55% 10%;
+}
+
+.fiction-left {
+  grid-area: 1 / 2 / span 1 / span 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.fiction-left h2 {
+  margin-top: 15%;
+  text-align: center;
+}
+
+.fiction-right {
+  grid-area: 1 / 3 / span 1 / span 1;
+}
+
+.fiction-right h3 {
+  margin-top: 10%;
+}
+
+.fiction-right p {
+  padding-left: 5%;
+}
+
+.fiction-right h4 {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#last-item {
+  margin-bottom: 20%;
+}
+
+/* Finished Fiction and Narrative section. Begin footer */
+
+footer {
+  height: 3rem;
+  background-color: rgb(51, 81, 181);
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  box-shadow: 0 0 15px black;
+}
+
+footer h4 {
+  display: inline;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Finish core web content. Begin media responsiveness section */
+
+@media only screen and (max-width:860px) {
+  #banner h1 {
+    padding-top: 5rem;
+  }
+
+  nav li {
+    display: none;
+  }
+
+  .about-me {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .about-me-left {
+    grid-area: 1 / 1 / span 1 / span 1;
+  }
+
+  .about-me-right {
+    grid-area: 2 / 1 / span 1 / span 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .policy {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .policy-left {
+    grid-area: 1 / 1 / span 1 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .policy-left .desktop {
+    display: none;
+  }
+
+  .policy-left h2 {
+    margin-top: 5%;
+  }
+
+  .policy-right {
+    grid-area: 2 / 1 / span 1 / span 1;
+    padding: 2rem;
+  }
+
+  .policy-right h3 {
+    margin-top: 0;
+  }
+
+  .data-viz {
+    grid-area: 3 / 1 / span 1 / span 1;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .data-left {
+    grid-area: 1 / 1 / span 1 / span 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .data-left h2 {
+    margin-top: 5%;
+  }
+
+  #mobile {
+    display: block;
+    color: rgb(100,100,100);
+    margin-top: -1rem;
+  }
+
+  .data-right {
+    grid-area: 2 / 1 / span 1 / span 1;
+    display: grid;
+    grid-template-rows: 62rem 62rem 58rem 46rem;
+    grid-template-columns: 1fr;
+    overflow: scroll;
+    border: 4px solid #888;
+    border-radius: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .graph {
+    margin-top: 0;
+    display: block;
+  }
+
+  .detail-container {
+    display: none;
+  }
+
+  .caption {
+    height: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+  }
+
+  .caption h4, .caption p {
+    color: black;
+  }
+
+  #china {
+    grid-area: 1 / 1 / span 1 / span 1;
+    margin-top: 2rem;
+  }
+
+  #china:hover .graph {
+    transform: none;
+  }
+
+  #dc-race {
+    grid-area: 2 / 1 / span 1 / span 1;
+  }
+
+  #dc-race:hover .graph {
+    transform: none;
+  }
+
+  #tenure {
+    grid-area: 3 / 1 / span 1 / span 1;
+  }
+
+  #tenure:hover .graph {
+    transform: none;
+  }
+
+  #offices {
+    grid-area: 4 / 1 / span 1 / span 1;
+    margin-top: -10rem;
+  }
+
+  #offices:hover .graph {
+    transform: none;
+  }
+
+  .fiction-narrative {
+    grid-area: 4 / 1 / span 1 / span 1;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .fiction-left {
+    grid-area: 1 / 1 / span 1 / span 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .fiction-left h2 {
+    margin-top: 5%;
+  }
+
+  .fiction-right {
+    grid-area: 2 / 1 / span 1 / span 1;
+    padding: 2rem;
+  }
+
+  .fiction-right h3 {
+    margin-top: 0;
+  }
+
 }
