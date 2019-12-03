@@ -519,6 +519,7 @@ footer h4 {
   display: inline;
   color: white;
   font-size: 1rem;
+  font-weight: 400;
 }
 
 /* Finish core web content. Begin media responsiveness section */
