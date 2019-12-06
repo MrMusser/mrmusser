@@ -73,21 +73,22 @@ nav {
   height: 3rem;
   background-color: rgb(51, 81, 181);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-around;
   position: absolute;
   top: 500px;
   left: 0;
   right: 0;
   box-shadow: 0 0 15px black;
   z-index: 1;
+  align-items: center;
 }
 
 nav li {
   display: inline;
   color: white;
   font-size: 1rem;
-  padding-right: 4rem;
+  padding-right: 2rem;
 }
 
 nav a {
@@ -428,38 +429,21 @@ figure {
 
 /* FInished Fiction and Narrative Section. Begin interests / photo gallery section */
 
-/* This section relies on the tutorial for a photo gallery found at https://www.w3schools.com/howto/howto_js_slideshow.asp, which requires JavaScript
-
-.interests {
+.photos {
   grid-area: 5 / 1 / span 1 / span 1;
   background-color: rgb(240,240,240);
-  display: grid;
-  height: auto;
-  grid-template-columns: 5% 45% 45% 5%;
-}
-
-.interests-left {
-  grid-area: 1 / 2 / span 1 / span 1;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
-  height: 20rem;
+  align-items: center;
 }
 
-.ineterests-left h2 {
-  margin-top: 15%;
+.photos h2 {
+  margin-top: 5rem;
   text-align: center;
 }
 
-.interests-right {
-  grid-area: 1 / 3 / span 1 / span 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.photo-gallery {
+.gallery {
   border: 4px solid #aaa;
   border-radius: 10px;
   display: flex;
@@ -467,36 +451,68 @@ figure {
   justify-content: center;
   flex-direction: column;
   flex-wrap: nowrap;
+  margin-bottom: 8rem;
+  position: relative;
+  width: 80%;
 }
 
-.photo-gallery img {
-  max-width: 90%;
-  max-height: 90%;
-  padding: 10px;
+.gallery img {
+  max-width: 80%;
+  margin: 2rem;
+  display: inline-block;
+}
+
+.photos figcaption {
+  max-width: 80%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#photo1a, #photo1b, #photo1-caption {
+  display: block;
+}
+
+#photo1a {
+  margin-bottom: 1rem;
+}
+
+#photo1b {
+  margin-top: 0;
+}
+
+#photo2, #photo2-caption {
   display: none;
 }
 
-.prev, .next {
+#photo3, #photo3-caption {
+  display: none;
+}
+
+#prev, #next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
-  width: auto;
+  width: 2rem;
   padding: 1rem;
-  color: white;
+  color: #ddd;
+  background-color: rgba(0,0,0,0.4);
   font-weight: bold;
   font-size: 2rem;
-  border-radius: 0 10px 10px 0;
   user-select: none;
   transition: all 0.5s linear;
 }
 
-.next {
+#prev {
+  border-radius: 0 10px 10px 0;
+  left: 0px;
+}
+
+#next {
   right: 0px;
   border-radius: 10px 0 0 10px;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.5);
+#prev:hover, #next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
 /* Finished interests / photo gallery section. Begin footer */
@@ -520,6 +536,7 @@ footer h4 {
   color: white;
   font-size: 1rem;
   font-weight: 400;
+  text-align: center;
 }
 
 /* Finish core web content. Begin media responsiveness section */
