@@ -1,3 +1,15 @@
+window.onscroll = function() {navScroll()};
+
+function navScroll() {
+  if (window.pageYOffset > 500) {
+    document.querySelector('nav').style.position = 'fixed';
+    document.querySelector('nav').style.top = 0;
+  } else {
+    document.querySelector('nav').style.position = 'absolute';
+    document.querySelector('nav').style.top = 500 + 'px';
+  }
+};
+
 const photo1a = document.getElementById('photo1a');
 const photo1b = document.getElementById('photo1b');
 const photo2 = document.getElementById('photo2');
