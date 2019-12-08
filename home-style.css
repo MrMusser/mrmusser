@@ -458,7 +458,7 @@ figure {
   flex-wrap: nowrap;
   margin-bottom: 8rem;
   position: relative;
-  width: 80%;
+  width: 50rem;
 }
 
 .gallery img {
@@ -485,11 +485,7 @@ figure {
   margin-top: 0;
 }
 
-#photo2, #photo2-caption {
-  display: none;
-}
-
-#photo3, #photo3-caption {
+#photo2, #photo2-caption, #photo3, #photo3-caption, #photo4, #photo4-caption {
   display: none;
 }
 
@@ -504,6 +500,7 @@ figure {
   font-size: 2rem;
   user-select: none;
   transition: all 0.5s linear;
+  top: 15rem;
 }
 
 #prev {
@@ -712,6 +709,11 @@ footer h4 {
 
   .fiction-right h3 {
     margin-top: 0;
+  }
+
+  .gallery {
+    max-width: 90%;
+    width: auto;
   }
 
 }
