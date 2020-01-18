@@ -1,0 +1,795 @@
+html {
+  font-size: 16px;
+  font-family: 'Montserrat', serif;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: 'Croissant One', serif;
+  color: rgb(51, 81, 181);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Banner Section */
+
+#banner {
+  background-image: url('Pictures/banner.jpg');
+  background-size: cover;
+  height: 500px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+#banner:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  background-color: rgba(51, 81, 181, 0.5);
+}
+
+#banner * {
+  position: relative;
+}
+
+#banner h1 {
+  padding-top: 7rem;
+  text-shadow: 0 0 25px black;
+  color: white;
+  text-align: center;
+}
+
+#banner h2 {
+  padding-top: 1.5rem;
+  text-shadow: 0 0 15px black;
+  text-align: center;
+  color: white;
+}
+
+/* End Banner Section. Begin navigation bar section. */
+
+nav {
+  height: 3rem;
+  background-color: rgb(51, 81, 181);
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  position: absolute;
+  top: 500px;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 15px black;
+  z-index: 2;
+  align-items: center;
+}
+
+nav li {
+  display: inline;
+  color: white;
+  font-size: 1rem;
+  padding-right: 2rem;
+}
+
+nav a {
+  color: white;
+  transition: color 0.3s ease-in;
+}
+
+nav a:hover {
+  color: rgb(153,168,218);
+}
+
+#mobile-menu {
+  display: none;
+}
+
+#mobile-items {
+  display: none;
+}
+
+/* Finalize navigation bar. Begin main */
+
+main {
+  position: absolute;
+  top: 548px;
+  left: 0;
+  right: 0;
+  background-color: rgb(200, 200, 200);
+  z-index: 0;
+  display: grid;
+  grid-auto-rows: max-content;
+}
+
+.nlp-app {
+  grid-area: 1 / 1 / span 1 / span 1;
+  background-color: rgb(255,255,255);
+}
+
+.graph-wrapper {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.app-graph {
+  position: relative;
+  margin: 0 0;
+}
+
+.example-wrapper {
+  width: 90%;
+  margin: 0 5% 5% 5%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.example-graph {
+  grid-area: 1 / 1 / span 1 / span 1;
+  position: relative;
+  max-width: 100%;
+  display: inline-flex;
+  margin: 0 0 0 0;
+}
+
+.explanation {
+  grid-area: 1 / 2 / span 1 / span 1;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.explanation_text {
+  text-align: left;
+  animation: slide 1s ease;
+}
+
+.next_example {
+  animation: slide 1s ease;
+  background: rgb(51,81,181);
+  width: 18rem;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.next_example p {
+  font-weight: bold;
+  transition: color 0.3s ease-in;
+}
+
+.next_example p:hover {
+  color: rgb(153,168,218);
+}
+
+/* Main initialized. Begin "About Me" section */
+
+.about-me {
+  grid-area: 2 / 1 / span 1 / span 1;
+  background-color: rgb(245,245,245);
+  display: grid;
+  grid-template-columns: 10% 30% 50% 10%;
+}
+
+.about-me-left {
+  grid-area: 1 / 2 / span 1 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#headshot {
+  width: 75%;
+  height: auto;
+  padding-top: 5rem;
+}
+
+.text {
+  width: 100%;
+  margin-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+.about-me-left h3 {
+  font-size: 2rem;
+  margin-top: -2.5%;
+  text-align: center;
+}
+
+.about-me-left h4 {
+  color: rgb(100,100,100);
+  margin-top: -5%;
+  text-align: center;
+}
+
+.about-me-left ul {
+  justify-content: space-around;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.about-me-left li {
+  display: inline;
+}
+
+.fa, .ai {
+  color: rgb(51, 81, 181);
+}
+
+.fa:hover, .ai:hover {
+  transform: scale(1.5,1.5);
+}
+
+.about-me-right {
+  grid-area: 1 / 3 / span 1 / span 1;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 5%;
+}
+
+.about-me-right h2 {
+  padding-left: 0;
+}
+
+/* About Me section done. Begin Policy Writing section */
+
+.policy {
+  grid-area: 3 / 1 / span 1 / span 1;
+  background-color: rgb(255,255,255);
+  display: grid;
+  grid-template-columns: 5% 30% 55% 10%;
+}
+
+.policy-left {
+  grid-area: 1 / 2 / span 1 / span 1;
+}
+
+.desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.policy-left h2 {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.policy-left h4 {
+  color: rgb(100, 100, 100);
+  text-align: center;
+  margin-top: 15%;
+}
+
+.logo {
+  justify-content: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+#cspc {
+  max-width: 50%;
+  display: block;
+}
+
+#berkley {
+  max-width: 35%;
+  display: block;
+}
+
+.policy-right {
+  grid-area: 1 / 3 / span 1 / span 1;
+}
+
+.policy-right h3 {
+  margin-top: 10%;
+}
+
+.policy-right p {
+  padding-left: 5%;
+}
+
+.policy-right h4 {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+/* Policy Writing section finished. Begin Data Visualization section */
+
+.data-viz {
+  grid-area: 4 / 1 / span 1 / span 1;
+  background-color: rgb(245,245,245);
+  display: grid;
+  height: 45rem;
+  grid-template-columns: 5% 30% 55% 10%;
+}
+
+.detail {
+  grid-area: 1 / 1 / span 1 / span 1;
+  display: flex;
+  align-items: center;
+}
+
+.data-left {
+  grid-area: 1 / 2 / span 1 / span 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.data-left h2 {
+  text-align: center;
+  margin-top: 15%;
+}
+
+#mobile {
+  display: none;
+}
+
+.data-right {
+  grid-area: 1 / 3 / span 1 / span 1;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+figure {
+  width: 90%;
+}
+
+.graph {
+  width: 100%;
+  max-height: 100%;
+  border: 2px solid #aaa;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  margin-top: 15%;
+}
+
+.detail-container {
+  position: fixed;
+  z-index: 10;
+  left: -100%;
+  box-sizing: border-box;
+  top: 0;
+  height: 90%;
+  width: 35%;
+  border: 4px solid #aaa;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  opacity: 1;
+  transition: all 0.75s ease-in-out;
+  margin-top: 3.5rem;
+}
+
+.detail-container p, .detail-container h4 {
+  padding-left: 2%;
+  padding-right: 2%;
+
+}
+
+#china {
+  grid-area: 1 / 1 / span 1 / span 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#china:hover .graph {
+  transform: scale(2,2) translate(25%,25%);
+}
+
+#china:hover .detail-container {
+  opacity: 1;
+  left: 0;
+}
+
+#dc-race {
+  grid-area: 1 / 2 / span 1 / span 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#dc-race:hover .graph {
+  transform: scale(2,2) translate(-25%,25%);
+}
+
+#dc-race:hover .detail-container {
+  opacity: 1;
+  left: 0;
+}
+
+#tenure {
+  grid-area: 2 / 1 / span 1 / span 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#tenure:hover .graph {
+  transform: scale(2,2) translate(25%,-25%);
+}
+
+#tenure:hover .detail-container {
+  opacity: 1;
+  left: 0;
+}
+
+#offices {
+  grid-area: 2 / 2 / span 1 / span 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#offices:hover .graph {
+  transform: scale(2,2) translate(-25%,-25%);
+}
+
+#offices:hover .detail-container {
+  opacity: 1;
+  left: 0;
+}
+
+/* Finished Data Visualization section. Begin Fiction and Narrative section. */
+
+.fiction-narrative {
+  grid-area: 5 / 1 / span 1 / span 1;
+  background-color: rgb(255,255,255);
+  display: grid;
+  height: auto;
+  grid-template-columns: 5% 30% 55% 10%;
+}
+
+.fiction-left {
+  grid-area: 1 / 2 / span 1 / span 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.fiction-left h2 {
+  margin-top: 15%;
+  text-align: center;
+}
+
+.fiction-right {
+  grid-area: 1 / 3 / span 1 / span 1;
+}
+
+.fiction-right h3 {
+  margin-top: 10%;
+}
+
+.fiction-right p {
+  padding-left: 5%;
+}
+
+.fiction-right h4 {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+/* FInished Fiction and Narrative Section. Begin interests / photo gallery section */
+
+.photos {
+  grid-area: 6 / 1 / span 1 / span 1;
+  background-color: rgb(245,245,245);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photos h2 {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.gallery {
+  border: 4px solid #aaa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 8rem;
+  position: relative;
+  width: 50rem;
+}
+
+.gallery img {
+  max-width: 80%;
+  margin: 2rem;
+  display: inline-block;
+}
+
+.photos figcaption {
+  max-width: 80%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#photo1a, #photo1b, #photo1-caption {
+  display: block;
+}
+
+#photo1a {
+  margin-bottom: 1rem;
+}
+
+#photo1b {
+  margin-top: 0;
+}
+
+#photo2, #photo2-caption, #photo3, #photo3-caption, #photo4, #photo4-caption {
+  display: none;
+}
+
+#prev, #next {
+  cursor: pointer;
+  position: absolute;
+  width: 2rem;
+  padding: 1rem;
+  color: #ddd;
+  background-color: rgba(0,0,0,0.4);
+  font-weight: bold;
+  font-size: 2rem;
+  user-select: none;
+  transition: all 0.5s linear;
+  top: 15rem;
+}
+
+#prev {
+  border-radius: 0 10px 10px 0;
+  left: 0px;
+}
+
+#next {
+  right: 0px;
+  border-radius: 10px 0 0 10px;
+}
+
+#prev:hover, #next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Finished interests / photo gallery section. Begin footer */
+
+footer {
+  height: 3rem;
+  background-color: rgb(51, 81, 181);
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  box-shadow: 0 0 15px black;
+}
+
+footer h4 {
+  display: inline;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Finish core web content. Begin media responsiveness section */
+
+@media screen and (max-width: 900px) {
+  #banner h1 {
+    padding-top: 5rem;
+  }
+
+  nav li {
+    display: none;
+  }
+
+  .about-me {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .about-me-left {
+    grid-area: 1 / 1 / span 1 / span 1;
+  }
+
+  .about-me-right {
+    grid-area: 2 / 1 / span 1 / span 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .policy {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .policy-left {
+    grid-area: 1 / 1 / span 1 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .policy-left .desktop {
+    display: none;
+  }
+
+  .policy-left h2 {
+    margin-top: 5%;
+  }
+
+  .policy-right {
+    grid-area: 2 / 1 / span 1 / span 1;
+    padding: 2rem;
+  }
+
+  .policy-right h3 {
+    margin-top: 0;
+  }
+
+  .data-viz {
+    grid-area: 3 / 1 / span 1 / span 1;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .data-left {
+    grid-area: 1 / 1 / span 1 / span 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .data-left h2 {
+    margin-top: 5%;
+  }
+
+  #mobile {
+    display: block;
+    color: rgb(100,100,100);
+    margin-top: -1rem;
+  }
+
+  .data-right {
+    grid-area: 2 / 1 / span 1 / span 1;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    overflow: scroll;
+    border: 4px solid #888;
+    border-radius: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .graph {
+    margin-top: 0;
+    display: block;
+  }
+
+  .detail-container {
+    display: none;
+  }
+
+  figcaption {
+    height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    display: block;
+  }
+
+  .caption h4, .caption p {
+    color: black;
+  }
+
+  #china {
+    grid-area: 1 / 1 / span 1 / span 1;
+    margin-top: 2rem;
+  }
+
+  #china:hover .graph {
+    transform: none;
+  }
+
+  #dc-race {
+    grid-area: 2 / 1 / span 1 / span 1;
+  }
+
+  #dc-race:hover .graph {
+    transform: none;
+  }
+
+  #tenure {
+    grid-area: 3 / 1 / span 1 / span 1;
+  }
+
+  #tenure:hover .graph {
+    transform: none;
+  }
+
+  #offices {
+    grid-area: 4 / 1 / span 1 / span 1;
+  }
+
+  #offices:hover .graph {
+    transform: none;
+  }
+
+  .fiction-narrative {
+    grid-area: 4 / 1 / span 1 / span 1;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .fiction-left {
+    grid-area: 1 / 1 / span 1 / span 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .fiction-left h2 {
+    margin-top: 5%;
+  }
+
+  .fiction-right {
+    grid-area: 2 / 1 / span 1 / span 1;
+    padding: 2rem;
+  }
+
+  .fiction-right h3 {
+    margin-top: 0;
+  }
+
+  .gallery {
+    max-width: 90%;
+    width: auto;
+  }
+
+}
