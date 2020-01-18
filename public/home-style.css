@@ -121,11 +121,87 @@ main {
   grid-auto-rows: max-content;
 }
 
+.nlp-app {
+  grid-area: 1 / 1 / span 1 / span 1;
+  background-color: rgb(255,255,255);
+}
+
+.graph-wrapper {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.app-graph {
+  position: relative;
+  margin: 0 0;
+}
+
+.example-wrapper {
+  width: 90%;
+  margin: 0 5% 5% 5%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.example-graph {
+  grid-area: 1 / 1 / span 1 / span 1;
+  position: relative;
+  max-width: 100%;
+  display: inline-flex;
+  margin: 0 0 0 0;
+}
+
+.explanation {
+  grid-area: 1 / 2 / span 1 / span 1;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.explanation_text {
+  text-align: left;
+  animation: slide 1s ease;
+}
+
+.next_example {
+  animation: slide 1s ease;
+  background: rgb(51,81,181);
+  width: 18rem;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.next_example p {
+  font-weight: bold;
+  transition: color 0.3s ease-in;
+}
+
+.next_example p:hover {
+  color: rgb(153,168,218);
+}
+
 /* Main initialized. Begin "About Me" section */
 
 .about-me {
-  grid-area: 1 / 1 / span 1 / span 1;
-  background-color: rgb(240,240,240);
+  grid-area: 2 / 1 / span 1 / span 1;
+  background-color: rgb(245,245,245);
   display: grid;
   grid-template-columns: 10% 30% 50% 10%;
 }
@@ -198,8 +274,8 @@ main {
 /* About Me section done. Begin Policy Writing section */
 
 .policy {
-  grid-area: 2 / 1 / span 1 / span 1;
-  background-color: rgb(230,230,230);
+  grid-area: 3 / 1 / span 1 / span 1;
+  background-color: rgb(255,255,255);
   display: grid;
   grid-template-columns: 5% 30% 55% 10%;
 }
@@ -262,8 +338,8 @@ main {
 /* Policy Writing section finished. Begin Data Visualization section */
 
 .data-viz {
-  grid-area: 3 / 1 / span 1 / span 1;
-  background-color: rgb(240,240,240);
+  grid-area: 4 / 1 / span 1 / span 1;
+  background-color: rgb(245,245,245);
   display: grid;
   height: 45rem;
   grid-template-columns: 5% 30% 55% 10%;
@@ -395,8 +471,8 @@ figure {
 /* Finished Data Visualization section. Begin Fiction and Narrative section. */
 
 .fiction-narrative {
-  grid-area: 4 / 1 / span 1 / span 1;
-  background-color: rgb(230,230,230);
+  grid-area: 5 / 1 / span 1 / span 1;
+  background-color: rgb(255,255,255);
   display: grid;
   height: auto;
   grid-template-columns: 5% 30% 55% 10%;
@@ -435,8 +511,8 @@ figure {
 /* FInished Fiction and Narrative Section. Begin interests / photo gallery section */
 
 .photos {
-  grid-area: 5 / 1 / span 1 / span 1;
-  background-color: rgb(240,240,240);
+  grid-area: 6 / 1 / span 1 / span 1;
+  background-color: rgb(245,245,245);
   display: flex;
   justify-content: center;
   flex-direction: column;
