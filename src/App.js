@@ -204,7 +204,7 @@ export default class Form extends React.Component {
         {this.state.value === 'You have not yet inputted a valid sentence.' ? this.state.example : <br/>}
         <br/>
         <p style={{maxWidth: '65%', margin: '40px auto'}}>This app is based off of a recent paper I wrote using natural language processing to examine how different types of authors communicate
-        with the public regarding gene editing technologies. To read the full paper, click <a href='PDFs/NLP_paper.pdf'>here</a>.</p>
+        with the public regarding gene editing technologies. To read the full paper, click <a href='https://osf.io/preprints/socarxiv/ehbgt/'>here</a>.</p>
       </div>
     );
   }

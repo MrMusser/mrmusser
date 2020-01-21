@@ -628,6 +628,10 @@ footer h4 {
     display: none;
   }
 
+  #app {
+    display: none;
+  }
+
   .about-me {
     grid-template-rows: auto;
     grid-template-columns: 1fr;
