@@ -127,10 +127,11 @@ export default class Form extends React.Component {
   handleChange(event) {
     this.setState({value: event.target.value === '' ? 'You have not yet inputted a valid sentence.' : event.target.value});
     this.setState({example: ''});
-    fetch('http://localhost:5000/submit_sentence', {
+    fetch('https://nlp-crispr-app.herokuapp.com/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://nlp-crispr-app.herokuapp.com/'
       },
       body: JSON.stringify(event.target.value)
     }).then(response => response.json())
@@ -153,6 +154,8 @@ export default class Form extends React.Component {
       } else {
         this.setState({prediction: 'It is unclear what type of author wrote this sentence.'});
       }
+    }).catch(err => {
+      console.log(err);
     });
   }
 
