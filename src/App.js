@@ -117,11 +117,45 @@ export default class Form extends React.Component {
       scientist: 0.2,
       unrelated: 0.2,
       example: '',
-      prediction: 'It is unclear what type of author wrote this sentence.'
+      prediction: 'It is unclear what type of author wrote this sentence.',
+      initializer: ' '
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    fetch('https://nlp-crispr-app.herokuapp.com/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://nlp-crispr-app.herokuapp.com/'
+      },
+      body: JSON.stringify(this.state.initializer)
+    }).then(response => response.json())
+    .then(json => {
+      this.setState({journalist: json.prediction_array[0]});
+      this.setState({commission: json.prediction_array[1]});
+      this.setState({ethicist: json.prediction_array[2]});
+      this.setState({scientist: json.prediction_array[3]});
+      this.setState({unrelated: json.prediction_array[4]});
+      if (json.prediction_array[0] > 0.6) {
+        this.setState({prediction: 'This sentence was most likely written by a journalist.'});
+      } else if (json.prediction_array[1] > 0.6) {
+        this.setState({prediction: 'This sentence was most likely written by a commission.'});
+      } else if (json.prediction_array[2] > 0.6) {
+        this.setState({prediction: 'This sentence was most likely written by an ethicist.'});
+      } else if (json.prediction_array[3] > 0.6) {
+        this.setState({prediction: 'This sentence was most likely written by a scientist.'});
+      } else if (json.prediction_array[4] > 0.6) {
+        this.setState({prediction: 'This sentence probably has nothing to do with gene editing, or if it does, you don\'t sound very much like an expert.'});
+      } else {
+        this.setState({prediction: 'It is unclear what type of author wrote this sentence.'});
+      }
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
   handleChange(event) {
@@ -172,7 +206,7 @@ export default class Form extends React.Component {
           <input type='text' style={inputStyles} onChange={this.handleChange} name='sentenceInput' />
           </label>
         <p><strong>Your input:</strong> {this.state.value}</p>
-        {this.state.value !== 'You have not yet inputted a valid sentence.' ? <p style={{fontSize: '24px'}}>{this.state.prediction}</p> : <br/>}
+        {this.state.value !== 'You have not yet inputted a valid sentence.' ? <p style={{fontSize: '24px', maxWidth: '65%'}}>{this.state.prediction}</p> : <br/>}
         <div className='graph-wrapper'>
         {this.state.value !== 'You have not yet inputted a valid sentence.' ? <Chart
           chartType="BarChart"
