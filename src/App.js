@@ -206,7 +206,7 @@ export default class Form extends React.Component {
           <input type='text' style={inputStyles} onChange={this.handleChange} name='sentenceInput' />
           </label>
         <p><strong>Your input:</strong> {this.state.value}</p>
-        {this.state.value !== 'You have not yet inputted a valid sentence.' ? <p style={{fontSize: '24px', maxWidth: '65%'}}>{this.state.prediction}</p> : <br/>}
+        {this.state.value !== 'You have not yet inputted a valid sentence.' ? <p style={{fontSize: '24px', maxWidth: '65%', textAlign: 'center'}}>{this.state.prediction}</p> : <br/>}
         <div className='graph-wrapper'>
         {this.state.value !== 'You have not yet inputted a valid sentence.' ? <Chart
           chartType="BarChart"
